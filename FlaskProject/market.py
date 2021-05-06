@@ -6,13 +6,11 @@ app = Flask(__name__)
 def hello_world():
     return render_template('home.html')
 
-@app.route('/bug')
-def bug():
-    return 'Lets check what is wrong here'
+@app.route('/market')
+def market():
+    return render_template('market.html')
 
-@app.route('/name/<username>')
-def username(username):
-    return f'Hello {username}'
+
 
 
 # if __name__ == "__main__":
