@@ -1,5 +1,14 @@
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
+db = SQLAlchemy(app)
+
+class Item(db.Model):
+    id = db.Column(db.Integer(), unique= True)
+    name = db.Column(db.String(length=30),nullable=False,unique=True)
+    price = db.Column(db.Integer(),nullable=False)
+    barcode = db.Column(db.String(length=20), nullable=False,unique=True)
+    description = db.Column(db.String(length=1020), nullable=False)
 
 @app.route('/')
 @app.route('/home')
