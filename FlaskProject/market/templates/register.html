@@ -7,8 +7,10 @@ Register Page
 {% block content %}
 <h1 style="padding-left: 5.6rem; padding-top: 1rem;">Register Page</h1>
 <div class="container">  
-    <form method="POST" class="form-register" style='color:white'>
-        <br/>
+    <form method="POST" class="form-register" style='color:white'>     
+        <h5 class="h5 my-4 font-weight-normal">
+            Please Create your Account
+        </h5>
         {{ form.username.label() }}
         {{ form.username(class="form-control", placeholder="Username" ) }}
         <br/>
@@ -20,10 +22,8 @@ Register Page
         <br/>
         {{ form.password2.label() }}
         {{ form.password2(class="form-control", placeholder="Type your Password again" ) }}
-        <br/>
-        
-
-
+        <br/><br/>
+        {{ form.submit(class="btn btn-primary btn-lg btn-block")}}
     </form>
 </div>
 {% endblock %}
