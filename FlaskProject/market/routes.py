@@ -30,3 +30,7 @@ def register_page():
         for err_msg in form.errors.values():
             flash(f'There was an error in {err_msg}',category='danger')  
     return render_template('register.html',form=form)
+
+@app.route('/login', methods=['GET','POST'])
+def login_page():
+    return render_template('login.html')
