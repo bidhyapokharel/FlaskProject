@@ -13,11 +13,12 @@
                         <th scope="col">Name</th>
                         <th scope="col">Barcode</th>
                         <th scope="col">Price</th>
+                        <th scope="col">Description</th>
                         <th scope="col"> Options </th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for item in item_name %}
+                    {% for item in items %}
                     <tr>
                         <td>{{ item.id }}</td>
                         <td>{{ item.name }}</td>
@@ -29,7 +30,7 @@
                             <button class="btn btn-outline btn-success">Purchase the item</button>
                         </td>
                     </tr>
-                      {% endfor %}                      
+                    {% endfor %}                      
                 </tbody>
             </table>
 {% endblock %}

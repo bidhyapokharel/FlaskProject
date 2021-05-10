@@ -7,7 +7,9 @@ Register Page
 {% block content %}
 <h1 style="padding-left: 5.6rem; padding-top: 1rem;">Register Page</h1>
 <div class="container">  
-    <form method="POST" class="form-register" style='color:white'>     
+    <form method="POST" class="form-register" style='color:white'> 
+        <!-- To avoid Cross Site Request Forgery -->
+        {{ form.hidden_tag() }}    
         <h5 class="h5 my-4 font-weight-normal">
             Please Create your Account
         </h5>
@@ -15,7 +17,7 @@ Register Page
         {{ form.username(class="form-control", placeholder="Username" ) }}
         <br/>
         {{ form.email_address.label() }}
-        {{ form.email_address(class="form-control",type="email", placeholder="Email Address" ) }}
+        {{ form.email_address(class="form-control", placeholder="Email Address" ) }}
         <br/>
         {{ form.password1.label() }}
         {{ form.password1(class="form-control", placeholder="Password" ) }}
